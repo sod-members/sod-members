@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="whole">
+   <div class="head">
+    <h1><u>Simple calculator</u></h1>
+   </div>
+   <div class="form-control">
+    <label>Enter first number</label>
+    <input type="text" id= "num1"><br>
+    <label>Enter second number</label>
+    <input type="text" id= "num2"><br>
+</div>
+<div class="signs" id="signs">
+<div class="plus">
+    <button type="btn" onclick="plus()">+</button>
+</div>
+<div class="minus">
+    <button type="btn" onclick="minus()">-</button>
+</div>
+<div class="times">
+    <button type="btn" onclick="multiply()">x</button>
+</div>
+<div class="division">
+    <button type="btn" onclick ="division()">/</button>
+</div>
+<div class="clear">
+    <button onclick="clean()">C</button>
+</div>
+</div>
+<div id = "result">
+    <label>Result</label>
+    <input type="number" id="resultInput" disabled>
+</div>
+</div>
+    <script>
+        function whole(){
+            const x = Number(document.getElementById('num1').value);
+            const y = Number(document.getElementById('num2').value); 
+            return {x, y};
+        }
+        function plus(){
+           const {x, y}= whole();
+           document.getElementById("resultInput").value = x + y;
+        }
+        function minus(){
+            const {x, y} = whole();
+            document.getElementById("resultInput").value = x - y;
+        }
+        function multiply(){
+            const {x, y} = whole();
+            document.getElementById("resultInput").value = x * y;
+        }
+        function division(){
+            const {x, y} = whole();
+            document.getElementById("resultInput").value = x / y;
+        }
+        function clean(){
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("resultInput").value = "";
+        }
+    </script>
+</body>
+</html> 
